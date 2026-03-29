@@ -550,6 +550,16 @@ body {
   transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.success-toast.active {
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Mobile Hamburger Menu Styles */
 .mobile-toggle-btn {
   display: none;
