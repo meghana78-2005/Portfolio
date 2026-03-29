@@ -161,3 +161,31 @@ if (contactForm) {
         }
     });
 }
+
+// --- Mobile Menu Toggle Logic ---
+const mobileMenuOpen = document.getElementById('mobileMenuOpen');
+const mobileMenuClose = document.getElementById('mobileMenuClose');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+const mobileMenuItems = document.querySelectorAll('.mobile-menu-item');
+
+if (mobileMenuOpen && mobileMenuOverlay && mobileMenuClose) {
+    // Open Menu
+    mobileMenuOpen.addEventListener('click', () => {
+        mobileMenuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling while menu is open
+    });
+
+    // Close Menu (via X button)
+    mobileMenuClose.addEventListener('click', () => {
+        mobileMenuOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    });
+
+    // Close Menu (via Clicking any Link)
+    mobileMenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+}
