@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Meghana Mamidisetti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Centered layout for the landing page */
+        .welcome-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            /* A subtle beautiful gradient background */
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .welcome-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #2b2b2b;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .welcome-subtitle {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 40px;
+            font-weight: 400;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .btn-enter {
+            padding: 15px 45px;
+            font-size: 1.15rem;
+            font-weight: 600;
+            border-radius: 50px;
+            background-color: #007bff;
+            color: white !important;
+            border: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            text-decoration: none;
+            animation: fadeIn 0.8s ease-out 0.6s both;
+        }
+
+        .btn-enter:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Anime Animation Styles */
+        .button-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .anime-character {
+            position: absolute;
+            bottom: 30px; 
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .anime-character img {
+            width: 180px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            /* Starts smaller and hidden */
+            opacity: 0;
+            transform: scale(0.5) translateY(50px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .speech-bubble {
+            position: relative;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px) scale(0.8);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            white-space: nowrap;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px 10px 0;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+        }
+
+        /* Active State when User Clicks */
+        .button-wrapper.active .anime-character img {
+            opacity: 1;
+            transform: scale(1) translateY(-60px);
+        }
+
+        .button-wrapper.active .speech-bubble {
+            opacity: 1;
+            transform: translateY(-50px) scale(1);
+            transition-delay: 0.4s;
+        }
+
+        .button-wrapper.active .btn-enter {
+            opacity: 0.8;
+            pointer-events: none;
+            transform: scale(0.95);
+        }
+
+        @media (max-width: 768px) {
+            .welcome-title { font-size: 2.5rem; }
+            .welcome-subtitle { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="welcome-section">
+        <h1 class="welcome-title">Hey Guys! I'm Meghana</h1>
+        <p class="welcome-subtitle">Welcome to my digital space, where I share my journey, my work, and my passion for technology.</p>
+        
+        <div class="button-wrapper" id="enterWrapper">
+            <!-- Modified link to be a button to handle click -->
+            <button class="btn btn-enter" id="enterBtn">Enter Portfolio</button>
+            <div class="anime-character">
+                <div class="speech-bubble">Now you are entering into my world! ✨</div>
+                <img src="anime_girl.png" alt="Anime Girl">
+            </div>
+        </div>
+    </div>
+
+    <!-- Javascript to add class and then redirect -->
+    <script>
+        document.getElementById('enterBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            var wrapper = document.getElementById('enterWrapper');
+            var btn = document.getElementById('enterBtn');
+            
+            // Trigger animation by adding 'active' class
+            wrapper.classList.add('active');
+            btn.innerText = "Entering...";
+            
+            // Wait 2.8 seconds so the user can enjoy the animation, then redirect
+            setTimeout(function() {
+                window.location.href = 'portfolio.html';
+            }, 2800);
+        });
+    </script>
+</body>
+</html>

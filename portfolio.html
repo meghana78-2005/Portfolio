@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meghana Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Interactive Canvas Splash Background -->
+  <canvas id="splash-canvas"></canvas>
+
+  <!-- SVG Filter for the Gooey Liquid Effect -->
+  <svg style="position: absolute; width: 0; height: 0;">
+    <filter id="goo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0   0 1 0 0 0   0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+  </svg>
+
+  <!-- Floating Gooey Glass Dock -->
+  <nav class="gooey-nav">
+    <div class="gooey-nav-content">
+      <a href="#home" class="gooey-item active" data-tooltip="Home"><i class="bi bi-house-door"></i></a>
+      <a href="#about" class="gooey-item" data-tooltip="About"><i class="bi bi-person"></i></a>
+      <a href="#skills" class="gooey-item" data-tooltip="My Stack"><i class="bi bi-code-square"></i></a>
+      <a href="#projects" class="gooey-item" data-tooltip="Projects"><i class="bi bi-briefcase"></i></a>
+      <a href="#contact" class="gooey-item" data-tooltip="Contact"><i class="bi bi-envelope"></i></a>
+      <!-- The liquid tracking blob -->
+      <div class="gooey-indicator"></div>
+    </div>
+  </nav>
+
+<!-- Main Wrap for Sections -->
+<main class="content-wrapper">
+
+  <!-- Hero Section -->
+  <section id="home">
+    <div class="container text-center" style="z-index: 5; position: relative;">
+      
+      <!-- Professional Avatar -->
+      <div class="hero-image-wrapper">
+        <img src="./My_image.jpeg" alt="Meghana" class="hero-avatar">
+      </div>
+      
+      <h3 class="hero-title" style="font-size: 4rem;">Hi, I'm Meghana 👋</h3>
+      <h4 class="hero-subtitle mb-4">An aspiring AI & Data Science Student<br>who loves building responsive web applications<br>and exploring intelligent solutions.</h4>
+      
+      <!-- <div class="hero-bullets mb-5 text-start d-inline-block text-white-50 fs-5" style="line-height: 1.8; font-weight: 500;">
+        💻 I build.<br>
+        📊 I learn.<br>
+        🚀 I grow every day.
+      </div> -->
+      
+      <div class="d-flex justify-content-center gap-4 mt-5 flex-wrap">
+        <a href="#projects" class="btn-glow">View My Work <i class="bi bi-briefcase ms-2"></i></a>
+        <a href="./Meghana_resume.pdf" target="_blank" class="btn-glow">Download Resume <i class="bi bi-file-earmark-text ms-2"></i></a>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="glass-section container">
+    <h2 class="section-title">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+        <!-- Placeholder for a picture -->
+        <img src="./My_image.jpeg" alt="Meghana Profile" class="img-fluid rounded-circle shadow-lg" style="width: 300px; height: 300px; object-fit: cover; border: 4px solid rgba(255,255,255,0.1);">
+      </div>
+      <div class="col-lg-7">
+        <div class="glass-card">
+          <p class="fs-5 fw-bold text-info mb-3">Hi, I’m Meghana 👋</p>
+          <p class="fs-6 mb-3">I’m an AI & Data Science student with a strong interest in web development and artificial intelligence.</p>
+          <p class="fs-6 mb-3">I started with programming languages like C, Java, and Python, and now build responsive applications using HTML, CSS, and JavaScript.</p>
+          <p class="fs-6 mb-3">I enjoy turning ideas into real projects and exploring how AI can be used to solve real-world problems.</p>
+          <p class="fs-6 fw-bold text-info">My goal is to grow as a developer and create impactful, intelligent solutions.</p>
+          <a href="#contact" class="btn btn-outline-light mt-4 rounded-pill px-4 pt-2 pb-2">Let's Talk <i class="bi bi-chat-dots ms-2"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Grid Section -->
+  <section id="skills" class="glass-section container">
+    <h2 class="section-title">My Tech Stack</h2>
+    
+    <div class="d-flex flex-wrap justify-content-center gap-4 mt-5">
+      <div class="skill-card"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+      <div class="skill-card" style="transition-delay: 100ms;"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+      <div class="skill-card" style="transition-delay: 200ms;"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+      <div class="skill-card" style="transition-delay: 300ms;"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+      <div class="skill-card" style="transition-delay: 400ms;"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+      <div class="skill-card" style="transition-delay: 500ms;"><i class="devicon-c-plain colored"></i><span>C</span></div>
+      <div class="skill-card" style="transition-delay: 600ms;"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+    </div>
+  </section>
+
+  <!-- Experience & Education Section -->
+  <section id="experience" class="glass-section container">
+    <h2 class="section-title">Journey</h2>
+    <div class="timeline">
+      <!-- Item 1 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h4>B.Tech in Artificial Intelligence and Data Science</h4>
+          <h5>2023 - 2027</h5>
+          <p>Currently pursuing a Bachelor of Technology degree in Artificial Intelligence and Data Science, focusing on machine learning, deep learning, and data-driven decision-making.</p>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h4>Intermediate</h4>
+          <h5>2023 - 2021</h5>
+          <p>Completed Intermediate education with a strong foundation in mathematics, physics, and chemistry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="glass-section container">
+    <h2 class="section-title">Selected Works</h2>
+    <div class="row g-3 justify-content-center">
+      <!-- Project 1 -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="glass-card h-100 p-0 overflow-hidden text-center text-md-start project-card-compact">
+          <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?q=80&w=600&h=400&fit=crop" class="img-fluid w-100" alt="Smart Study Planner">
+          </div>
+          <div class="p-3">
+            <h6 class="fw-bold text-white mb-2">Smart Study Planner</h6>
+            <p class="x-small text-white-50 mb-3">An AI-powered scheduler that optimizes study time and task management for students.</p>
+            <div class="d-flex justify-content-center mt-3">
+              <a href="https://meghana78-2005.github.io/smart-study-scheduler/" target="_blank" class="btn btn-sm btn-info rounded-pill px-4 x-small fw-bold text-dark w-100"><i class="bi bi-rocket-takeoff me-1"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="glass-card h-100 p-0 overflow-hidden text-center text-md-start project-card-compact">
+          <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=600&h=400&fit=crop" class="img-fluid w-100" alt="Legal Navigator">
+          </div>
+          <div class="p-3">
+            <h6 class="fw-bold text-white mb-2">Legal Navigator</h6>
+            <p class="x-small text-white-50 mb-3">A specialized platform for legal research and case navigation utilizing intelligent search logic.</p>
+            <div class="d-flex justify-content-center mt-3">
+              <a href="https://fair-work-legal-navigator-2026.streamlit.app/" target="_blank" class="btn btn-sm btn-info rounded-pill px-4 x-small fw-bold text-dark w-100"><i class="bi bi-rocket-takeoff me-1"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="glass-card h-100 p-0 overflow-hidden text-center text-md-start project-card-compact">
+          <div class="position-relative">
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=600&h=400&fit=crop" class="img-fluid w-100" alt="AI Web Hub">
+          </div>
+          <div class="p-3">
+            <h6 class="fw-bold text-white mb-2">AI Web Hub</h6>
+            <p class="x-small text-white-50 mb-3">A centralized portal for AI-driven tools, experiments, and community resources.</p>
+            <div class="d-flex justify-content-center mt-3">
+              <a href="https://ai-web-hub-woad.vercel.app/" target="_blank" class="btn btn-sm btn-info rounded-pill px-4 x-small fw-bold text-dark w-100"><i class="bi bi-rocket-takeoff me-1"></i> Live Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="glass-section container mb-5">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="row g-5 justify-content-center">
+      <!-- Contact Details -->
+      <div class="col-lg-4">
+        <div class="glass-card h-100 d-flex flex-column justify-content-center p-4">
+          <h4 class="fw-bold text-info mb-4">Contact Details</h4>
+          <div class="contact-info-item mb-4 d-flex align-items-center">
+            <div class="contact-icon-box me-3"><i class="bi bi-envelope-fill"></i></div>
+            <div>
+              <p class="mb-0 text-white-50 small">Email Me</p>
+              <a href="mailto:your.email@example.com" class="text-white text-decoration-none fw-bold">meghanamamidisetty</a>
+            </div>
+          </div>
+          <div class="contact-info-item mb-4 d-flex align-items-center">
+            <div class="contact-icon-box me-3"><i class="bi bi-geo-alt-fill"></i></div>
+            <div>
+              <p class="mb-0 text-white-50 small">Location</p>
+              <p class="mb-0 text-white fw-bold">Andhra Pradesh, India</p>
+            </div>
+          </div>
+          <div class="contact-info-item mb-4 d-flex align-items-center">
+            <div class="contact-icon-box me-3"><i class="bi bi-share-fill"></i></div>
+            <div>
+              <p class="mb-0 text-white-50 small">Social Hub</p>
+              <div class="d-flex gap-3 mt-2">
+                <a href="https://github.com/meghana78-2005" target="_blank" class="text-white fs-4 social-icon"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/meghana-mamidisetti/" target="_blank" class="text-info fs-4 social-icon"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <div class="glass-card p-4 p-md-5">
+          <form id="contact-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="col-md-6">
+                <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+              </div>
+              <div class="col-12">
+                <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+              </div>
+              <div class="col-12">
+                <textarea id="message" class="form-control" rows="6" placeholder="Your Message" required></textarea>
+              </div>
+              <div class="col-12 text-center mt-4">
+                <button type="submit" class="btn-glow border-0 w-100 py-3">Send Message <i class="bi bi-send ms-2"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Notification Toast -->
+  <div id="success-toast" class="success-toast">
+    <div class="toast-content">
+      <i class="bi bi-check-circle-fill me-2"></i>
+      <span>Message Successfully Sent!</span>
+    </div>
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
